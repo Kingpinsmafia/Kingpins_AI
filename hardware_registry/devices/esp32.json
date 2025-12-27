@@ -1,0 +1,61 @@
+{
+  "device_id": "esp32-devkit",
+  "device_type": "microcontroller_module",
+  "model": "ESP32-WROOM-32",
+  "manufacturer": "Espressif Systems",
+  "power": {
+    "voltage": 3.3,
+    "max_current_ma": 500
+  },
+  "interfaces": [
+    "GPIO",
+    "I2C",
+    "SPI",
+    "UART",
+    "WiFi",
+    "BLE"
+  ],
+  "gpio_pins": {
+    "GPIO2": "general purpose",
+    "GPIO4": "general purpose",
+    "GPIO5": "general purpose",
+    "GPIO13": "general purpose",
+    "GPIO14": "general purpose",
+    "GPIO18": "general purpose",
+    "GPIO19": "general purpose",
+    "GPIO21": "general purpose",
+    "GPIO22": "general purpose",
+    "GPIO23": "general purpose"
+  },
+  "supported_sensors": [
+    "i2c_temperature",
+    "i2c_imu",
+    "adc_analog"
+  ],
+  "supported_actuators": [
+    "gpio_led",
+    "gpio_relay",
+    "pwm_motor"
+  ],
+  "flashing": {
+    "method": "serial (esptool)",
+    "tools": [
+      "esptool.py",
+      "esp-idf (idf.py)",
+      "platformio"
+    ],
+    "notes": "Flash over USB-serial using a compatible adapter and follow tool instructions for boot/erase/write."
+  },
+  "safety_constraints": {
+    "recommended_supply_voltage_v": 3.3,
+    "min_supply_voltage_v": 3.0,
+    "max_supply_voltage_v": 3.6,
+    "max_device_current_ma": 500,
+    "recommended_max_gpio_pin_current_ma": 12
+  },
+  "buy_links": [
+    "https://example.com/buy/esp32-devkit",
+    "https://example.com/buy/esp32-module",
+    "https://example.com/buy/usb-serial-adapter"
+  ]
+}

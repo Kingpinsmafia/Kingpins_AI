@@ -1,0 +1,34 @@
+{
+  "device_id": "esp32-devkit",
+  "payloads": [
+    {
+      "payload_id": "esp32-hello-world-v1",
+      "firmware_type": "esp-idf-firmware",
+      "version": "1.0.0",
+      "checksum": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+      "size_bytes": 32768,
+      "description": "Minimal firmware image that blinks an LED and exposes a serial console.",
+      "recommended_tools": ["esptool.py", "idf.py"],
+      "required_role": "operator"
+    },
+    {
+      "payload_id": "esp32-wifi-sample-v1",
+      "firmware_type": "esp-idf-firmware",
+      "version": "1.0.0",
+      "checksum": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+      "size_bytes": 131072,
+      "description": "Sample firmware demonstrating WiFi connectivity for testing; includes diagnostics only.",
+      "recommended_tools": ["esptool.py", "idf.py"],
+      "required_role": "operator"
+    }
+  ],
+  "injectors": [
+    {
+      "injector_id": "esptool-serial",
+      "method": "serial",
+      "tools": ["esptool.py"],
+      "notes": "Human operator must use provided tool and follow boot sequence. This is metadata only; no automation.",
+      "required_role": "operator"
+    }
+  ]
+}
