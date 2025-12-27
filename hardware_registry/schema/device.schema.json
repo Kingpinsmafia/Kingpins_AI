@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "device_id",
+    "device_type",
+    "model",
+    "manufacturer",
+    "power",
+    "interfaces",
+    "gpio_pins",
+    "supported_sensors",
+    "supported_actuators",
+    "flashing",
+    "safety_constraints",
+    "buy_links"
+  ],
+  "properties": {
+    "device_id": { "type": "string" },
+    "device_type": { "type": "string" },
+    "model": { "type": "string" },
+    "manufacturer": { "type": "string" },
+    "power": {
+      "type": "object",
+      "required": ["voltage", "max_current_ma"],
+      "properties": {
+        "voltage": { "type": "number" },
+        "max_current_ma": { "type": "number" }
+      }
+    },
+    "interfaces": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "gpio_pins": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "supported_sensors": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "supported_actuators": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "flashing": {
+      "type": "object",
+      "required": ["method", "tools", "notes"],
+      "properties": {
+        "method": { "type": "string" },
+        "tools": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "notes": { "type": "string" }
+      }
+    },
+    "safety_constraints": {
+      "type": "object",
+      "required": [
+        "recommended_supply_voltage_v",
+        "max_supply_voltage_v",
+        "max_gpio_pin_current_ma",
+        "logic_level"
+      ],
+      "properties": {
+        "recommended_supply_voltage_v": { "type": "number" },
+        "max_supply_voltage_v": { "type": "number" },
+        "max_gpio_pin_current_ma": { "type": "number" },
+        "logic_level": { "type": "string" }
+      }
+    },
+    "buy_links": {
+      "type": "array",
+      "items": { "type": "string", "format": "uri" }
+    }
+  },
+  "additionalProperties": false
+}
